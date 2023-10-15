@@ -28,6 +28,7 @@ const Container = styled(Box)(({ theme }) => ({
     marginBottom: '17px',
     background: '#fff',
     padding: '5px',
+    width : '550px',
     [theme.breakpoints.down('sm')]: {
         width: '250px',
 
@@ -48,6 +49,11 @@ const Key = styled('span')({
     fontWeight: 600
 })
 
+const ImageBox = styled(Box)({
+    width: '200px',
+    heigth : '200px',
+    margin : '0 15px'
+})
 const Home = () => {
 
     const dispatch = useDispatch()
@@ -105,7 +111,6 @@ const Home = () => {
                 temp.push(Images.Images[i]);
                 i++;
             }
-            console.log("🚀 ~ file: Home.jsx:104 ~ useEffect ~ temp:", temp)
             setImagesToshow(prevImages => [...prevImages, ...temp]);
         }
     }, [Images, page]);
@@ -170,7 +175,9 @@ const Home = () => {
                         <Grid item lg={4} md={4} sm={4} xs={8}>
                             {
                                 loading ? <Skeleton variant="rectangular" width={200} height={200} /> :
-                                    <img src={imageDetail?.download_url} alt='Gallary' className='img-fuild detail-image' />
+                                    <ImageBox>
+                                        <img src={imageDetail?.download_url} alt='Gallary' className='img-fuild detail-image' />
+                                    </ImageBox>
                             }
                         </Grid>
                         <Grid item lg={7} md={7} sm={7} xs={12}>

@@ -32,9 +32,8 @@ body {
 }
 
 .detail-image {
-  width: 200px;
-  height: 200px;
-  margin: 0 15px;
+  width: 100%;
+  height: 100%;
 }
 
 #loading-gif {
